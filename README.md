@@ -35,7 +35,7 @@
 
 
 # Perceptron Adaline
-Implement Machine Learning Algorithm - Perceptron &amp; Adaline
+Implement Machine Learning Algorithm - BPNN
 
 ## Install Package
 #### 1. Open command line and cd into yours clone project folder

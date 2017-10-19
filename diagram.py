@@ -17,4 +17,4 @@ class Diagram(object):
         plt.show()
     def training_progress_diagram(self):
         cost = self.classifier.cost
-        plt.plot(range(1 , len(cost) + 1) , cost , 'k-')
+        plt.plot(range(1 , len(cost) + 1) , cost , 'b-')
