@@ -12,6 +12,12 @@
 設定為一個（150 * 3）的矩陣
 - 輸出層（Y）
 使用 Iris 的輸出為三類，為一個（150 * 4）的矩陣
+#### 訓練參數
+- Learning rate：0.01
+- Iteration：100,000
+- Momentum：0.9
+#### 終止條件
+- MSE <= 0.012
 ## 輸出結果
 #### 訓練走勢圖
 ![](https://i.imgur.com/CY5BWFf.png)
