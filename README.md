@@ -15,7 +15,7 @@
 #### 訓練參數
 - Learning rate：0.01
 - Iteration：100,000
-- Momentum：0.9
+- Momentum：0.01
 #### 終止條件
 - MSE <= 0.012
 ## 輸出結果
