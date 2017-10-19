@@ -4,9 +4,25 @@ import pandas as pd
 class Dataset(object):
     def __init__(self , data_path):
         self.df = pd.read_csv(data_path, header = None)
-        self.output = self.one_hot_encoding(self.df.iloc[0:, 4].values)
-        self.training_data = self.standard_deviation(self.df.iloc[0:, [0 , 1 , 2 , 3]].values)
+        self.Y = self.one_hot_encoding(self.df.iloc[0:, 4].values)
+        self.x = self.standard_deviation(self.df.iloc[0:, [0 , 1 , 2 , 3]].values)
+    def split_data(self , x , Y , p):
+        data = []
+        for i in range(x.shape[0]):
+            data.append([])
+            data[i].append(np.array(x[i]))
+            data[i].append(np.array(Y[i]))
+        np.random.shuffle(data)
 
+        split = int(Y.shape[0] * p)
+        data = np.array(data)
+        self.train_x  , self.train_Y = data[: split , 0] , data[: split , 1]
+        self.test_x  , self.test_Y = data[split:  , 0] , data[split:  , 1]
+        self.train_x = np.array([x.tolist() for x in self.train_x.tolist()])
+        self.train_Y = np.array([Y.tolist() for Y in self.train_Y.tolist()])
+        self.test_x = np.array([x.tolist() for x in self.test_x.tolist()])
+        self.test_Y = np.array([Y.tolist() for Y in self.test_Y.tolist()])
+        return self
     def standard_deviation(self , X):
         X_std = np.copy(X)
         for i in range(0 , X.shape[1]):
