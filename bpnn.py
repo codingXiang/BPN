@@ -42,8 +42,8 @@ class BPNN(object):
         delta_y = E * self.y * (1 - self.y)
         ### 隱藏層 delta 計算
         delta_h = (1 - self.h) * self.h * np.dot(delta_y , self.w2.T)
-        self.w2 += self.learning_rate * self.h.T.dot(delta_y) * self.momentum
-        self.w1 += self.learning_rate * self.x.T.dot(delta_h) * self.momentum
+        self.w2 += self.learning_rate * self.h.T.dot(delta_y) + self.momentum * self.h.T.dot(delta_y)
+        self.w1 += self.learning_rate * self.x.T.dot(delta_h) + self.momentum * self.x.T.dot(delta_h) 
         return errors
 
     def train(self):
