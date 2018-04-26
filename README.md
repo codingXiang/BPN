@@ -13,13 +13,13 @@
 #### 網路架構（Neural Network Architecture）
 - 輸入層（Input Layer）
     - 總共 4 個節點
-    - 使用 Iris 的四個特徵值作為輸入層，為一個（150 * 3）的矩陣
+    - 使用 Iris 的四個特徵值作為輸入層，為一個（150 * 4）的矩陣
 - 隱藏層（Hidden Layer）
     - 總共 3 個節點
     - 設定為一個（150 * 3）的矩陣
 - 輸出層（Output Layer）
     - 總共 3 個節點
-    - 使用 Iris 的輸出為三類，為一個（150 * 4）的矩陣
+    - 使用 Iris 的輸出為三類，為一個（150 * 3）的矩陣
 
 
 #### 權重（Neural Network Weight）
